@@ -1,0 +1,6 @@
+@use 'baseSCSS';
+
+.inverse {
+  background-color: baseSCSS.$primary-color;
+  color: white;
+}
