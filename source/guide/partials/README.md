@@ -12,3 +12,4 @@
 
 ## Note
 * If you use webstorm -> you can enable [some watcher plugin](https://www.jetbrains.com/help/webstorm/transpiling-sass-less-and-scss-to-css.html). _Example:_ File Watcher
+* You can refer directly to the variable defined in the partial file
