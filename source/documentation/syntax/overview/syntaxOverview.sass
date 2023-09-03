@@ -1,0 +1,21 @@
+@mixin dimensions
+  color: red
+
+
+@mixin button-base()
+  @include dimensions
+
+  display: inline-flex
+  position: relative
+  border: none
+  vertical-align: middle
+
+  &:hover
+    cursor: pointer
+
+  &:disabled
+    cursor: default
+    pointer-events: none
+
+.info
+  @include button-base
