@@ -11,5 +11,5 @@
   }`
   * way to declare a mixin
   * by itself, once it's compiled -> nothing is generated in css
-* `@include theme($theme: DarkRed)`
+* `@include mixinName(VariablesToPass)`
   * way to use a mixin
