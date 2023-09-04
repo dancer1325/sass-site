@@ -1,0 +1,60 @@
+//                                    -- url() --
+// Declare variables
+$roboto-font-path: "../fonts/roboto";
+
+@font-face {
+  // This is parsed as a normal function call that takes a quoted string.
+  // As quoted string -> variable is evaluated via interpolation
+  src: url("#{$roboto-font-path}/Roboto-Thin.woff2") format("woff2");
+
+  font-family: "Roboto";
+  font-weight: 100;
+}
+
+@font-face {
+  // This is parsed as a normal function call that takes an arithmetic
+  // expression.
+  // As unquoted string -> get access to the variable immediately
+  src: url($roboto-font-path + "/Roboto-Light.woff2") format("woff2");
+
+  font-family: "Roboto";
+  font-weight: 300;
+}
+
+@font-face {
+  // This is parsed as an interpolated special function.
+  // Invalid unquoted, because it's passed wrongly the variable
+  src: url(#{$roboto-font-path}/Roboto-Regular.woff2) format("woff2");
+
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+
+//                                    -- element() --
+$logo-element: logo-bg;
+
+.logo {
+  background: element(#{$logo-element});
+}
+
+//           element(..., element())
+// Declaring variables
+$theme: (
+  light: (
+    background: #f5f5f5,
+    text: #333,
+  ),
+  dark: (
+    background: #333,
+    text: #fff,
+  ),
+);
+$mode: light;
+$property: background;
+
+$color: element(#{$mode}, element(#{$property}, $theme));
+
+.my-element {
+  background-color: $color;
+}
