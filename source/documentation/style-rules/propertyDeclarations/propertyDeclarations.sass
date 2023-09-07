@@ -1,0 +1,73 @@
+@use "sass:meta"
+
+//                    -- Property's value accepts any SassScript expression --
+.circle
+  $size: 100px      // Declare a variable
+  width: $size      // It's evaluated previously
+  height: $size
+  border-radius: $size * 0.5
+
+
+//                    -- CSSProperty generated dynamically, via Interpolation --
+// Group CSS Declarations to make it reusable
+@mixin prefix($property, $value, $prefixes)
+  // Control flow for each list's element
+  @each $prefix in $prefixes
+    -#{$prefix}-#{$property}: $value  //TODO: Why do we get an error from the IDE, although afterwards compile to CSS?
+
+  #{$property}: $value
+
+
+.gray
+  @include prefix(filter, grayscale(50%), moz webkit)
+
+// avoid removing "   from "quotedStrings"
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas
+
+:root
+  --font-family-sans-serif: #{meta.inspect($font-family-sans-serif)}
+  --font-family-monospace: #{meta.inspect($font-family-monospace)}
+
+
+
+//                    -- Nesting --
+.enlarge
+  font-size: 14px
+  transition:
+    property: font-size
+    duration: 4s
+    delay: 2s
+
+  &:hover           // &  parent selector         : is a pseudo-class selector
+    font-size: 36px
+
+.info-page
+  margin: auto
+    bottom: 10px
+    top: 2px
+
+
+
+//                    -- CSS declaration logic dependant --
+$rounded-corners: false
+
+.button
+  border: 1px solid black
+  border-radius: if($rounded-corners, 5px, null)
+
+
+//                    -- CSS custom properties (--*) --
+$primary: #81899b  // Declare variables
+$accent: #302e24
+$warn: #dfa612
+
+
+:root
+  --primary: #{$primary}
+  --accent: #{$accent}
+  --warn: #{$warn}
+
+  // Even though this looks like a Sass variable, it's valid CSS so it's not
+  // evaluated.
+  --consumed-by-js: $primary
