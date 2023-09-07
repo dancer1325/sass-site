@@ -1,0 +1,38 @@
+// This comment won't be included in the CSS.
+  This is also commented out,
+  because it's indented
+
+
+/* Multi
+  line
+  comments
+
+  It can also contain interpolation (#):
+  1 + 1 = #{1 + 1}
+
+  This comment is NOT included in compressed mode (--style=compressed)
+
+  If you use indentation → * / is optional
+
+
+/*! This comment will be included even in compressed mode. */
+
+p .sans
+  font: Helvetica, /* Multiline inline comments can be written anywhere
+  but must be closed. */ sans-serif
+
+
+//                            -- Documentation comments --
+/// Computes an exponent.
+///
+/// @param {number} $base
+///   The number to multiply by itself.
+/// @param {integer (unitless)} $exponent
+///   The number of `$base`s to multiply together.
+/// @return {number} `$base` to the power of `$exponent`.
+@function pow($base, $exponent)
+  $result: 1
+  @for $_ from 1 through $exponent
+    $result: $result * $base
+
+  @return $result

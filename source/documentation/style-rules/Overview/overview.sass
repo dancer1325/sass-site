@@ -1,0 +1,66 @@
+//                        -- Style Rule --
+// === CSS ruleset
+.button                 // CSS Selector
+  padding: 3px 10px     // CSS Declarations
+  font-size: 12px
+  border-radius: 3px
+  border: 1px solid #e1e4e8
+
+
+//                        -- Nesting --
+// 1. Avoid duplicating CSS Selectors
+nav
+  color: red
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    display: inline-block
+
+  a
+    display: block
+    padding: 6px 12px
+    text-decoration: none
+
+// 2. For CSS selector lists
+// -> it will be applied to all list’s elements
+.alert, .warning
+  ul, p
+    margin-right: 0
+    margin-left: 0
+    padding-bottom: 0
+
+// 3. For CSS Selector combinators
+ul >
+  li
+    list-style-type: none
+
+
+
+h2
+  + p
+    border-top: 1px solid gray
+
+
+
+p
+  ~
+    span
+      opacity: 0.8
+
+
+//                        -- Interpolation --
+// #{VariableName}    Syntax for variable interpolation
+// The next is not shown in the parsed .css, because it's a definition
+@mixin define-emoji($name, $glyph)
+  span.emoji-#{$name}
+    font-family: IconFont
+    font-variant: normal
+    font-weight: normal
+    content: $glyph
+
+
+
+@include define-emoji("women-holding-hands", "👭")
