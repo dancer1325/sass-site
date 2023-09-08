@@ -35,7 +35,7 @@ $roboto-font-path: "../fonts/roboto";
 $logo-element: logo-bg;
 
 .logo {
-  background: element(#{$logo-element});
+  background: element(##{$logo-element});
 }
 
 //           element(..., element())
