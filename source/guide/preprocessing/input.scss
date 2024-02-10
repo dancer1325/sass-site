@@ -1,0 +1,9 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+// {      nest statements
+body {
+  // :    separation
+  font: 100% $font-stack;
+  color: $primary-color;
+}
