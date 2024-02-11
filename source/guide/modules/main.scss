@@ -1,6 +1,7 @@
 @use 'baseSCSS';
 
 .inverse {
+  // Required to pass the partial file name
   background-color: baseSCSS.$primary-color;
   color: white;
 }
