@@ -1,5 +1,5 @@
+@use "partialTwo.scss";     // Required to add as first line
 @import "partialscss";
-@use "partialTwo";
 
 body {
   background-color: $primary-color;
@@ -14,6 +14,6 @@ p {
 }
 
 h2 {
-  // TODO: Check why it's NOT necessary to import
-  color: $third-color;
+  // Required to pass the partial file name
+  color: partialTwo.$third-color;
 }
