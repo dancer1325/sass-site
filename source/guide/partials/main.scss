@@ -1,4 +1,5 @@
 @import "partialscss";
+@use "partialTwo";
 
 body {
   background-color: $primary-color;
@@ -10,4 +11,9 @@ h1 {
 
 p {
   font-size: $font-size;
+}
+
+h2 {
+  // TODO: Check why it's NOT necessary to import
+  color: $third-color;
 }
