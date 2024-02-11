@@ -1,5 +1,14 @@
 # [Extend and inheritance](https://sass-lang.com/guide/#inheritance)
 
+# Extend / Inheritance
+* allows
+  * CSS selector1's properties -- can be shared with -- CSS selector2's  
+
+# Placeholder class
+* := special type of class which
+  * once it’s extended → it’s generated
+    * == if it’s not extended → not generated in the .css
+
 ## How to preprocess SAAS files?
 * `sass extendAndInheritance.scss extendAndInheritance.css`
 * `sass extendAndInheritance.sass extendAndInheritance.css`
@@ -10,8 +19,5 @@
   * `%placeHolderClassName {
     …
     }`
-  * used with extended / inheritance
-    * once the placeholder class is extended -> it's generated
-    * if the placeholder class is not extended → not generated in the .css
 * Extend / Inheritance
   * `@extend placeHolderClassName`

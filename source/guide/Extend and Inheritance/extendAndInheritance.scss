@@ -11,6 +11,7 @@
   flex-wrap: wrap;
 }
 
+// The next CSS Selectors share properties via placeholder class
 .message {
   @extend %message-shared;
 }
