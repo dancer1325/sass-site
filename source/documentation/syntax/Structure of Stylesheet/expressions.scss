@@ -1,0 +1,58 @@
+//                          := Right hand side of
+$font-size-base: 16px;
+// 1. variable declaration
+$line-height: $font-size-base * 1.5; // Expression to define the value of the variable
+
+body {
+  font-size: $font-size-base; // CSS declaration's property value is an expression
+  line-height: $line-height;
+}
+
+
+
+//                                      uses
+// 1. arguments passed to
+// 1.1 @mixin and @include
+@mixin large-text($factor) {      // $factor    is an expression
+  font-size: $font-size-base * $factor;
+  line-height: $font-size-base * $factor * 1.5;
+}
+h1 {
+  @include large-text(1.5);     // specific value passed to the mixin previously defined
+}
+// 1.2 @function
+@function calc-line-height($factor) {     // $factor    is an expression
+  @return $font-size-base * $factor * 1.5;
+}
+h2 {
+  font-size: calc-line-height(1.5);     // specific value passed to the function's argument
+}
+
+// 2. control flow
+$font-size-large: $font-size-base * 1.5;
+@mixin large-text-with-control-flow {
+  @if $font-size-large > 20px {         //      $font-size-large > 20px     as expression
+    font-size: $font-size-large;
+  } @else {
+    font-size: $font-size-base;
+  }
+}
+
+// 3. manipulation via numeric operators
+// Check in another folder
+
+
+
+//                                    types
+// 1. literals
+$font-size-base-literal: 16px;
+$font: "Helvetica Neue";
+$font-color: #f2ece4;
+$font-content_editable: true;
+$font: null;
+$font-family: Helvetica, Arial, sans-serif;
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+// 2. operations
+$line-height-operation: $font-size-base * 1.5;
+// 3. others
+// Check in another folder
