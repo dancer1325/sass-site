@@ -2,6 +2,8 @@
 
 # := Directive which
 * allows grouping CSS declarations
+  * reusable
+  * arguments can be passed
 * `@mixin mixinName(VariablesToPass) {
     …
     }`
