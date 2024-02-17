@@ -1,5 +1,7 @@
 // 1. Grouping CSS declarations
 @mixin theme($theme: DarkGray) {          // Variable can be passed with a DarkGray as default one
+  // avoid using non-semantic classes   -- naming semantic, to be reusable --
+
   // CSS declarations grouped
   background: $theme;
   box-shadow: 0 0 1px rgba($theme, .25);
@@ -11,8 +13,8 @@
   @include theme;         // reusable
 }
 .alert {
-  @include theme($theme: DarkRed);
+  @include theme($theme: DarkRed);        // reusable
 }
 .success {
-  @include theme($theme: DarkGreen);
+  @include theme($theme: DarkGreen);      // reusable
 }

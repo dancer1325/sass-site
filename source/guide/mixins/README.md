@@ -2,7 +2,9 @@
 
 # := Directive which
 * allows grouping CSS declarations
-  * reusable
+  * -> 
+    * reusable
+    * avoid using non-semantic classes
   * arguments can be passed
 * `@mixin mixinName(VariablesToPass) {
     …
