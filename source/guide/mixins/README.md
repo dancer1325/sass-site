@@ -6,11 +6,15 @@
     * reusable
     * avoid using non-semantic classes
   * arguments can be passed
+  * they can be nested
 * `@mixin mixinName(VariablesToPass) {
     …
     }`
   * way to declare a mixin
   * by itself, once it's compiled -> nothing is generated in css
+  * body can contain any statement, except to top-level statements
+  * `mixinName`
+    * non-sensitive to  `-` or `_`
 * `@include mixinName(VariablesToPass)`
   * way to use a mixin
 
